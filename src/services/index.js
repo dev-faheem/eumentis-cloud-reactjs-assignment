@@ -1,3 +1,3 @@
-import { getUsers, getUserAvatar } from "./users.services";
+import { getUsers } from "./users.services";
 
-export { getUsers, getUserAvatar };
+export { getUsers };

@@ -4,7 +4,14 @@ function getUsers() {
   return new Promise((resolve, reject) => {
     http(`https://jsonplaceholder.typicode.com/users`, "get")
       .then((res) => {
-        resolve(res);
+        const _users = res.data.map((user) => {
+          return {
+            ...user,
+            avatar: `https://avatars.dicebear.com/v2/avataaars/${user.username}.svg?options[mood][]=happy`,
+            isFavorite: false
+          };
+        });
+        resolve(_users);
       })
       .catch((err) => {
         reject(err);
@@ -12,19 +19,4 @@ function getUsers() {
   });
 }
 
-function getUserAvatar({ username }) {
-  return new Promise((resolve, reject) => {
-    http(
-      `https://avatars.dicebear.com/v2/avataaars/${username}.svg?options[mood][]=happy`,
-      "get"
-    )
-      .then((res) => {
-        resolve(res);
-      })
-      .catch((err) => {
-        reject(err);
-      });
-  });
-}
-
-export { getUsers, getUserAvatar };
+export { getUsers };

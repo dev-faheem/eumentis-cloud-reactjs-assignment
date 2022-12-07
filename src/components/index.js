@@ -1,4 +1,4 @@
 import Splash from "./splash";
-import Card from "./card";
+import UserCard from "./card";
 
-export { Splash, Card };
+export { Splash, UserCard };
