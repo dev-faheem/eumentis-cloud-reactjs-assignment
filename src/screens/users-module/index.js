@@ -1,7 +1,10 @@
 import React from "react";
 
+// Importing Components
+import { Splash } from "../../components";
+
 const UsersModule = () => {
-  return <h1>Users Module</h1>;
+  return <Splash />;
 };
 
 export default UsersModule;
