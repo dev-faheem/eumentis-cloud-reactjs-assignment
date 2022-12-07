@@ -1,12 +1,14 @@
 import React from "react";
-import { Button } from "antd";
 import "antd/dist/reset.css";
 import "./App.css";
 
+// Import Routes
+import Router from "./routes";
+
 const App = () => (
-  <div className="App">
-    <Button type="primary">Button</Button>
-  </div>
+  <>
+    <Router />
+  </>
 );
 
 export default App;
